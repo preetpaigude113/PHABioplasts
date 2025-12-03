@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PHA Bioplasts — Waste to Bioplastics</title>
+  <meta name="description" content="PHA Bioplasts transforms hospitality food waste into 100% biodegradable PHA packaging. Circular, compostable, food-safe." />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Roboto+Slab:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#F6FBF6;
+      --card:#FFFFFF;
+      --accent:#2F5933;
+      --accent-2:#71A57A;
+      --muted:#6B7B6B;
+      --glass: rgba(255,255,255,0.6);
+      --radius:14px;
+      --maxwidth:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:"Lato",system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg,var(--bg), #EEF6EE);
+      color: #18321f;
+      line-height:1.5;
+    }
+    .container{max-width:var(--maxwidth);margin:0 auto;padding:32px;}
+    header.site-header{backdrop-filter: blur(6px);background: linear-gradient(90deg, rgba(255,255,255,0.6), rgba(255,255,255,0.35));border-radius: var(--radius);padding:18px 20px;margin:16px;box-shadow: 0 6px 22px rgba(20,30,20,0.06);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+    .brand{display:flex;gap:14px;align-items:center;}
+    .brand img{ width:56px; height:56px; object-fit:contain; border-radius:8px; background:transparent;}
+    .brand h1{margin:0;font-family:"Roboto Slab", serif;font-size:20px;letter-spacing:0.6px;color:var(--accent);}
+    .nav{display:flex;gap:12px;align-items:center;}
+    .nav a{text-decoration:none;color:var(--muted);font-weight:600;padding:8px 12px;border-radius:10px;transition:all .18s ease;font-size:14px;}
+    .nav a:hover{background:var(--glass); color:var(--accent)}
+    .cta{display:flex;gap:8px;align-items:center;}
+    .btn{display:inline-flex;align-items:center;gap:8px;border-radius:10px;padding:10px 14px;font-weight:700;font-size:14px;cursor:pointer;text-decoration:none;border:none;}
+    .btn-primary{background: linear-gradient(90deg,var(--accent), var(--accent-2));color:white;box-shadow: 0 8px 20px rgba(47,89,51,0.18);}
+    .btn-ghost{background:transparent;color:var(--accent);border:1px solid rgba(47,89,51,0.08);}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns: 1fr 420px;gap:28px;align-items:center;margin:28px 16px;max-width:var(--maxwidth);}
+    .hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.7), rgba(255,255,255,0.85));padding:36px;border-radius:20px;box-shadow: 0 18px 40px rgba(20,30,20,0.06);border:1px solid rgba(20,30,20,0.03);}
+    .eyebrow{display:inline-block;font-weight:700;color:var(--accent-2);background: rgba(113,165,122,0.12);padding:6px 10px;border-radius:999px;font-size:13px;margin-bottom:14px;}
+    .hero h2{margin:6px 0 10px 0;font-size:34px;line-height:1.05;font-family:"Roboto Slab", serif;color:#0f2a17;}
+    .hero p{ color:var(--muted); margin:0 0 20px 0; font-size:16px}
+    .actions{ display:flex; gap:12px; margin-top:10px; flex-wrap:wrap; }
+    .mini-features{ display:flex; gap:12px; margin-top:18px; flex-wrap:wrap; }
+    .feature{ background: linear-gradient(180deg,white, #f8fff8); border-radius:12px; padding:12px 14px; display:flex; gap:12px; align-items:center; border:1px solid rgba(20,30,20,0.03); box-shadow: 0 8px 18px rgba(30,40,30,0.03); max-width:320px; }
+    .feature svg{ width:28px; height:28px; flex-shrink:0; color:var(--accent); }
+
+    .hero-visual{ border-radius:18px; padding:18px; background: linear-gradient(180deg, rgba(45,80,50,0.06), rgba(255,255,255,0.08)); display:flex; justify-content:center; align-items:center; min-height:300px; box-shadow: 0 10px 30px rgba(20,30,20,0.04); }
+
+    section.card{ margin:18px 16px; background:var(--card); border-radius:16px; padding:26px; box-shadow: 0 10px 26px rgba(20,30,20,0.03); border:1px solid rgba(20,30,20,0.03); }
+    .grid-3{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+    .product-card{ padding:18px; border-radius:12px; background:linear-gradient(180deg,#fff,#fbfff9); border:1px solid rgba(20,30,20,0.02); }
+    .product-card h4{ margin:6px 0 8px 0; color:#12311f; }
+    .product-card p{ margin:0; color:var(--muted); font-size:14px }
+    .product-image{ width:100%; height:auto; border-radius:12px; box-shadow: 0 8px 18px rgba(20,30,20,0.04); border:1px solid rgba(20,30,20,0.03); background:#fff; padding:8px; }
+
+    /* Team */
+    .team-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:18px; align-items:start; }
+    .person{ padding:16px; border-radius:12px; background:linear-gradient(180deg,#fff,#fbfff9); text-align:center; display:flex; flex-direction:column; align-items:center; gap:10px; }
+    .team-photo{ width:110px; height:110px; object-fit:cover; border-radius:999px; box-shadow: 0 8px 20px rgba(20,30,20,0.08); border:4px solid rgba(255,255,255,0.9); }
+    .person strong{ display:block; color:#0f2a17; }
+    .person .muted{ font-size:13px; color:var(--muted); margin-top:4px; }
+
+    footer{ margin:26px 16px; padding:26px; border-radius:16px; background:linear-gradient(180deg,#fff,#f7fff7); text-align:center; border:1px solid rgba(20,30,20,0.03); }
+
+    @media (max-width:1100px){
+      .hero{ grid-template-columns: 1fr; }
+      .team-grid{ grid-template-columns:repeat(2,1fr); }
+      .grid-3{ grid-template-columns:1fr; }
+      .nav{ display:none; }
+    }
+    @media (max-width:560px){
+      header.site-header{ padding:12px; margin:10px }
+      .container{ padding:16px }
+      .hero h2{ font-size:26px }
+      .brand h1{ font-size:16px }
+      .hero-card{ padding:18px }
+      .team-photo{ width:88px; height:88px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="brand">
+      <img src="assets/logo.jpg" alt="PHA Bioplasts logo" />
+      <div>
+        <h1>PHA Bioplasts</h1>
+        <div style="font-size:12px;color:var(--muted);margin-top:4px">Waste → PHA → Compostable Packaging</div>
+      </div>
+    </div>
+
+    <nav class="nav" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#tech">Technology</a>
+      <a href="#products">Products</a>
+      <a href="#why">Why</a>
+      <a href="#team">Team</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="cta">
+      <a class="btn btn-ghost" href="#contact">Partner</a>
+      <a class="btn btn-primary" href="#tech">Explore</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="hero">
+      <div class="hero-card">
+        <span class="eyebrow">Sustainable Packaging</span>
+        <h2>Biodegradable packaging made from hospitality food waste</h2>
+        <p>We engineer high-performance, compostable PHA bioplastics from segregated hotel and QSR food waste — enabling hospitality and FMCG brands to switch to circular, certified packaging.</p>
+
+        <div class="actions">
+          <a class="btn btn-primary" href="#products">Our Products</a>
+          <a class="btn btn-ghost" href="#contact">Get Involved</a>
+        </div>
+
+        <div class="mini-features" style="margin-top:18px">
+          <div class="feature">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2l3 6 6 .5-4.5 3 1.2 6L12 15l-5.7 3.5L7.5 11 3 8.5 9 8 12 2z" fill="currentColor"/></svg>
+            <div>
+              <div style="font-weight:700;color:#12311f">Circular by design</div>
+              <div class="muted" style="font-size:13px">Your waste becomes your packaging</div>
+            </div>
+          </div>
+
+          <div class="feature">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3C7.03 3 3 7.03 3 12s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zm1 13h-2v-2h2v2zm0-4h-2V6h2v6z" fill="currentColor"/></svg>
+            <div>
+              <div style="font-weight:700;color:#12311f">Food-safe & certified</div>
+              <div class="muted" style="font-size:13px">Designed for food contact and composting</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero-visual" aria-hidden="true">
+        <!-- use uploaded JPG for visual -->
+        <img src="assets/cutlery.jpg" alt="PHA example product" style="max-width:360px; width:100%; height:auto;">
+      </aside>
+    </div>
+
+    <!-- About -->
+    <section id="about" class="card">
+      <h3 style="margin-top:0;font-family:'Roboto Slab',serif;color:var(--accent)">About PHA Bioplasts</h3>
+      <p class="muted">PHA Bioplasts is a material-innovation venture that converts segregated hospitality and QSR organic waste into Polyhydroxyalkanoate (PHA) — a high-performance, fully biodegradable polymer for packaging and disposables. We pair waste valorization with product-grade engineering to deliver compostable, food-safe, and export-ready packaging solutions.</p>
+    </section>
+
+    <!-- Technology -->
+    <section id="tech" class="card">
+      <h3 style="margin-top:0;font-family:'Roboto Slab',serif;color:var(--accent)">Technology</h3>
+      <p class="muted">Nature-powered biochemical conversion, optimized for performance and circularity.</p>
+      <div class="grid-3" style="margin-top:12px">
+        <div class="product-card"><h4>Feedstock Collection</h4><p class="muted">Segregated food waste from partner hotels, cafes & QSRs.</p></div>
+        <div class="product-card"><h4>Microbial Fermentation</h4><p class="muted">Microbes convert organic carbon into intracellular PHA.</p></div>
+        <div class="product-card"><h4>Extraction & Pellets</h4><p class="muted">Purified PHA pellets produced for molding and extrusion.</p></div>
+      </div>
+    </section>
+
+    <!-- Products -->
+    <section id="products" class="card">
+      <h3 style="margin-top:0;font-family:'Roboto Slab',serif;color:var(--accent)">Products</h3>
+      <p class="muted">Premium compostable solutions for hospitality, delivery, and FMCG brands.</p>
+
+      <div class="grid-3" style="margin-top:12px">
+        <div class="product-card">
+          <img src="assets/cutlery.jpg" alt="PHA Cutlery" class="product-image"/>
+          <h4>PHA Cutlery</h4>
+          <p class="muted">Heat-resistant, sturdy, and compostable cutlery for hotels & catering.</p>
+        </div>
+
+        <div class="product-card">
+          <img src="assets/bag.JPG" alt="PHA Carry Bags" class="product-image"/>
+          <h4>PHA Carry Bags</h4>
+          <p class="muted">Durable, flexible carry bags suitable for retail & takeaway operations.</p>
+        </div>
+
+        <div class="product-card">
+          <img src="assets/container.JPG" alt="PHA Containers" class="product-image"/>
+          <h4>Containers & Films</h4>
+          <p class="muted">Leak-resistant containers and moisture-barrier films for food and FMCG.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why -->
+    <section id="why" class="card">
+      <h3 style="margin-top:0;font-family:'Roboto Slab',serif;color:var(--accent)">Why PHA Bioplasts</h3>
+      <div class="grid-3" style="margin-top:12px">
+        <div class="product-card"><h4>Zero-cost Feedstock</h4><p class="muted">We upcycle hospitality organic waste, reducing material cost and emissions.</p></div>
+        <div class="product-card"><h4>100% Biodegradable</h4><p class="muted">Materials compost naturally without microplastic residues.</p></div>
+        <div class="product-card"><h4>Food-safe & Premium</h4><p class="muted">High-performance products engineered for food contact and export standards.</p></div>
+      </div>
+    </section>
+
+    <!-- Team -->
+    <section id="team" class="card">
+      <h3 style="margin-top:0;font-family:'Roboto Slab',serif;color:var(--accent)">Team</h3>
+      <div class="team-grid" style="margin-top:12px">
+        <div class="person">
+          <img src="assets/team/Preet.jpg" alt="Preet Sanjay Paigude" class="team-photo" loading="lazy"/>
+          <strong>Preet Sanjay Paigude</strong>
+          <div class="muted">Founder • Chemical Engineer • SCM & Operations</div>
+        </div>
+
+        <div class="person">
+          <img src="assets/team/Saluja.jpg" alt="Aashish Saluja" class="team-photo" loading="lazy"/>
+          <strong>Aashish Saluja</strong>
+          <div class="muted">Operations & Product Development</div>
+        </div>
+
+        <div class="person">
+          <img src="assets/team/Siddh.jpg" alt="Siddhant Jain" class="team-photo" loading="lazy"/>
+          <strong>Siddhant Jain</strong>
+          <div class="muted">Strategy & Market Development</div>
+        </div>
+
+        <div class="person">
+          <img src="assets/team/Tiwari.jpg" alt="Abhishek Tiwari" class="team-photo" loading="lazy"/>
+          <strong>Abhishek Tiwari</strong>
+          <div class="muted">Research & Partnerships</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="card">
+      <h3 style="margin-top:0;font-family:'Roboto Slab',serif;color:var(--accent)">Contact</h3>
+      <p class="muted">We partner with hotels, QSRs, FMCG brands and sustainability-driven organisations. Let's build a circular packaging solution together.</p>
+      <div style="display:flex;gap:18px;margin-top:12px;flex-wrap:wrap">
+        <div style="flex:1;min-width:220px"><strong>Email</strong><p class="muted" style="margin:6px 0 0">preetpaigude25@imi-k.edu.in</p></div>
+        <div style="flex:1;min-width:220px"><strong>Location</strong><p class="muted" style="margin:6px 0 0">Kolkata, India</p></div>
+        <div style="flex:1;min-width:220px"><strong>Pitch Deck</strong><p class="muted" style="margin:6px 0 0"><a href="assets/PHA-Bioplasts.pptx" style="color:var(--accent)">Download (PPT)</a></p></div>
+      </div>
+
+      <div style="margin-top:18px">
+        <a class="btn btn-primary" href="mailto:preetpaigude25@imi-k.edu.in">Contact Us</a>
+        <a class="btn btn-ghost" href="#products" style="margin-left:8px">View Products</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div style="max-width:900px;margin:0 auto">
+      <div style="font-weight:700;color:var(--accent)">PHA Bioplasts</div>
+      <div class="muted" style="font-size:13px;margin-top:6px">© 2025 PHA Bioplasts — Sustainable packaging for a circular tomorrow</div>
+    </div>
+  </footer>
+
+  <script>
+    // smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const target = document.querySelector(a.getAttribute('href'));
+        if(target){
+          e.preventDefault();
+          target.scrollIntoView({behavior:'smooth', block:'start'});
+        }
+      });
+    });
+
+    // hide broken team images gracefully
+    document.querySelectorAll('.team-photo').forEach(img=>{
+      img.addEventListener('error', ()=>{ img.style.display = 'none'; });
+    });
+  </script>
+</body>
+</html>
