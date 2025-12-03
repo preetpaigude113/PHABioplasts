@@ -143,8 +143,8 @@
       </div>
 
       <aside class="hero-visual" aria-hidden="true">
-        <!-- product visual (svg/photo) -->
-        <img src="assets/cutlery.svg" alt="PHA example product" style="max-width:360px; width:100%; height:auto;">
+        <!-- use uploaded JPG for visual -->
+        <img src="assets/cutlery.jpg" alt="PHA example product" style="max-width:360px; width:100%; height:auto;">
       </aside>
     </div>
 
@@ -172,19 +172,19 @@
 
       <div class="grid-3" style="margin-top:12px">
         <div class="product-card">
-          <img src="assets/cutlery.svg" alt="PHA Cutlery" class="product-image"/>
+          <img src="assets/cutlery.jpg" alt="PHA Cutlery" class="product-image"/>
           <h4>PHA Cutlery</h4>
           <p class="muted">Heat-resistant, sturdy, and compostable cutlery for hotels & catering.</p>
         </div>
 
         <div class="product-card">
-          <img src="assets/bag.svg" alt="PHA Carry Bags" class="product-image"/>
+          <img src="assets/bag.JPG" alt="PHA Carry Bags" class="product-image"/>
           <h4>PHA Carry Bags</h4>
           <p class="muted">Durable, flexible carry bags suitable for retail & takeaway operations.</p>
         </div>
 
         <div class="product-card">
-          <img src="assets/container.svg" alt="PHA Containers" class="product-image"/>
+          <img src="assets/container.JPG" alt="PHA Containers" class="product-image"/>
           <h4>Containers & Films</h4>
           <p class="muted">Leak-resistant containers and moisture-barrier films for food and FMCG.</p>
         </div>
@@ -206,25 +206,25 @@
       <h3 style="margin-top:0;font-family:'Roboto Slab',serif;color:var(--accent)">Team</h3>
       <div class="team-grid" style="margin-top:12px">
         <div class="person">
-          <img src="assets/team/preet.jpg" alt="Preet Sanjay Paigude" class="team-photo" loading="lazy"/>
+          <img src="assets/team/Preet.jpg" alt="Preet Sanjay Paigude" class="team-photo" loading="lazy"/>
           <strong>Preet Sanjay Paigude</strong>
           <div class="muted">Founder • Chemical Engineer • SCM & Operations</div>
         </div>
 
         <div class="person">
-          <img src="assets/team/saluja.jpg" alt="Aashish Saluja" class="team-photo" loading="lazy"/>
+          <img src="assets/team/Saluja.jpg" alt="Aashish Saluja" class="team-photo" loading="lazy"/>
           <strong>Aashish Saluja</strong>
           <div class="muted">Operations & Product Development</div>
         </div>
 
         <div class="person">
-          <img src="assets/team/siddh.jpg" alt="Siddhant Jain" class="team-photo" loading="lazy"/>
+          <img src="assets/team/Siddh.jpg" alt="Siddhant Jain" class="team-photo" loading="lazy"/>
           <strong>Siddhant Jain</strong>
           <div class="muted">Strategy & Market Development</div>
         </div>
 
         <div class="person">
-          <img src="assets/team/tiwari.jpg" alt="Abhishek Tiwari" class="team-photo" loading="lazy"/>
+          <img src="assets/team/Tiwari.jpg" alt="Abhishek Tiwari" class="team-photo" loading="lazy"/>
           <strong>Abhishek Tiwari</strong>
           <div class="muted">Research & Partnerships</div>
         </div>
@@ -268,7 +268,7 @@
       });
     });
 
-    // small fallback if team images missing -> hide broken img border gracefully
+    // hide broken team images gracefully
     document.querySelectorAll('.team-photo').forEach(img=>{
       img.addEventListener('error', ()=>{ img.style.display = 'none'; });
     });
